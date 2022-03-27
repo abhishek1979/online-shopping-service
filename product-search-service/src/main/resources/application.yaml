@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: product-search-service
+  profiles:
+    active: local
+  jackson:
+    serialization:
+      fail-on-empty-beans: 'false'
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce-dev-db
+    username: postgres
+    password: postgres
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
+
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    path: /product-search-service-ui.html
+ 
+server:
+  port: 9100
+  
+  

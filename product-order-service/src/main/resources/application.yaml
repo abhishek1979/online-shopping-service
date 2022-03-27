@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: movie-info-service
+  profiles:
+    active: local
+  jackson:
+    serialization:
+      fail-on-empty-beans: 'false'
+
+  datasource:    
+    url: jdbc:postgresql://localhost:5432/movie
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    path: /movieinfoservice-ui.html
+ 
+server:
+  port: 9200
+  
+  
